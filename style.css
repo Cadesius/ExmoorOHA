@@ -1,3 +1,26 @@
+@font-face {
+  font-family: Gotham;
+  src: url(FONTS/GothamBook.ttf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: bold;
+  src: url(FONTS/GothamBold.ttf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-style: italic;
+  src: url(FONTS/GothamBookItalic.ttf);
+}
+
+@font-face {
+  font-family: Gotham;
+  font-weight: lighter;
+  src: url(FONTS/GothamLight.ttf);
+}
+
 html{
   scroll-behavior: smooth;
 }
