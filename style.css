@@ -1,0 +1,302 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  scroll-margin: 20vh;
+  margin: 0;
+}
+
+.IMAGES{
+  margin-top: 5%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -5%;
+}
+
+.IMAGEGRID{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  /* grid-auto-flow: column; */
+  margin-top: 5%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -5%;
+  justify-items: center;
+  align-items: center;
+  justify-content: end;
+  grid-gap: 2%;
+}
+
+.IMAGEGRID2{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* grid-auto-flow: column; */
+  margin-top: 5%;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: -5%;
+  justify-items: center;
+  align-items: center;
+  justify-content: end;
+  grid-gap: 2%;
+}
+
+.IMGPRV{
+  width: 95%;
+  height: auto;
+  -webkit-transition: all .5s ease-in, all .5s ease-out;
+  -moz-transition: all .5s ease-in, all .5s ease-out;
+  -o-transition: all .5s ease-in, all .5s ease-out;
+  -ms-transition: all .5s ease-in, all .5s ease-out;
+  transition: all .5s ease-in, all .5s ease-out;
+  -webkit-filter: brightness(100%);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+  /* -webkit-filter: blur(1.5px); */
+  /* filter: blur(5px); */
+  scroll-snap-destination: center;
+  /* ...and now override with proper CSS property */
+}
+
+.IMGPRVM{
+  width: 100%;
+  height: auto;
+}
+
+.IMGPRVA{
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  -webkit-transition: all .5s ease-in, all .5s ease-out;
+  -moz-transition: all .5s ease-in, all .5s ease-out;
+  -o-transition: all .5s ease-in, all .5s ease-out;
+  -ms-transition: all .5s ease-in, all .5s ease-out;
+  transition: all .5s ease-in, all .5s ease-out;
+  object-fit: contain;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+}
+
+.IMGPRV:hover {
+  /* max-height: 95%; */
+  /* -webkit-filter: brightness(70%); */
+  /* -webkit-filter: blur(0px); */
+  /* width: 95%; */
+  transform: scale(1.05);
+  /* padding-top: 10%;
+  padding-bottom: 10%; */
+}
+
+.IMGPRV:hover .IMGPRVA{
+  opacity: 1;
+}
+
+table, th, td {
+  border-collapse: collapse;
+}
+
+.LINKS {
+  width:80%;
+  margin-bottom: 5%;
+  margin-left: 20%;
+}
+
+th, td {
+  font-family: "Gotham";
+  padding: 0%;
+  /* padding-left: 1%;
+  padding-right: 1%; */
+  text-align: center;
+}
+
+td .LINK {
+  display: block;
+  color: white;
+  font-family: "Gotham";
+  /* font-weight: bold; */
+  font-size: 12pt;
+  text-align: left;
+  padding: 14px 18px;
+  text-decoration: none;
+  -o-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -ms-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -moz-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -webkit-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+}
+
+td .DLLINK {
+  border: 2px solid #262626;
+  display: block;
+  color: #000000;
+  font-family: "Gotham";
+  font-weight: bold;
+  font-size: 15pt;
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+  -o-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -ms-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -moz-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -webkit-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+}
+
+td .LINK:hover {
+  background-color: #ffffff;
+  color: #000000;
+  /* background-color: #000000; */
+}
+
+td .DLLINK:hover {
+  background-color: #262626;
+  color: #ffffff;
+  /* background-color: #000000; */
+}
+
+h1 {
+    color: #262626;
+    margin-left: 20px;
+    padding-top: 12px;
+    font-family: "Gotham";
+    /* font-weight: 300; */
+    font-size: 30pt;
+    margin-bottom: -4px;
+  }
+
+h2 {
+    color: #262626;
+    /* margin-left: 20px;*/
+    padding-top: 1%;
+    font-family: "Gotham";
+    /* font-weight: 300; */
+    font-size: 22pt;
+    margin-bottom: -5px;
+    text-align: center;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 5pt;
+    padding: 0;
+    overflow: hidden;
+    background-color: #262626;
+  }
+
+.LOGO {
+    margin-top: 20px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    font-family: "Gotham";
+    font-size: 20pt;
+    text-align: center;
+    padding: 14px 18px;
+    text-decoration: none;
+    -o-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+    -ms-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+    -moz-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+    -webkit-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+    /* ...and now override with proper CSS property */
+    transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  }
+
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    color: #000000;
+    background-color: #ffffff;
+    /* background-color: #000000; */
+  }
+
+footer {
+	left: 0;
+	bottom: 0;
+	background-color: #262626;
+	color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 1%;
+    margin-top: 10%;
+}
+
+.BODY {
+    font-family: "Gotham";
+    text-align: center;
+    width: 100%;
+    padding-top: .5%;
+    padding-left: 0%;
+}
+
+.CR{
+  font-family: "Gotham";
+  text-align: left;
+  width: 100%;
+  padding-top: 2%;
+  margin-bottom: 5%;
+  /* padding-left: 5%; */
+}
+
+.CRS {
+    font-family: "Gotham", Book;
+    text-align: right;
+    /* padding-left: 90%; */
+    /* float: right; */
+    margin-bottom: 2%;
+}
+
+header {
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 3%;
+}
+
+.MAINIMG{
+  padding-top: 1%;
+  padding-right: 5%;
+  padding-bottom: 5%;
+  float: left;
+  position: relative;
+}
+
+.DLLINKS {
+  border: 2px solid #262626;
+  width: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: auto;
+}
+
+.STATS {
+  font-family: "Gotham";
+  text-align: left;
+  font-size: 13.5pt;
+  width: 100%;
+  padding-top: .5%;
+  padding-left: 0%;
+}
+
+.content {
+    margin-left: 10%;
+    margin-right: 10%;
+}
