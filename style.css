@@ -223,6 +223,7 @@ h2 {
   ul {
     list-style-type: none;
     margin: 5pt;
+    margin-right: 0;
     padding: 0;
     overflow: hidden;
     background-color: #262626;
