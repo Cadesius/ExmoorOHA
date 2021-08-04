@@ -432,9 +432,10 @@ header {
     margin: 0;
     margin-left: auto;
     margin-right: auto;
+    margin-left: -10%;
     padding: 0;
     max-width: 100%;
-    transform: scale(0.9);
+    transform: scale(0.8);
   }
 
   .IMAGEGRID2{
@@ -447,6 +448,8 @@ header {
     margin-left: auto;
     margin-right: auto;
     padding-left: 0;
+    /* margin-left: -10% !important; */
+    transform: scale(0.8);
   }
   td .DLLINK{
     font-size: 9pt;
