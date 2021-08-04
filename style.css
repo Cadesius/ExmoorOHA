@@ -432,11 +432,15 @@ header {
     margin: 0;
     margin-left: auto;
     margin-right: auto;
-    margin-left: -10%;
+    /* margin-left: -10%; */
     padding: 0;
     max-width: 100%;
     width: 100%;
     transform: scale(0.8);
+    float: left;
+  }
+  .LINK{
+    font-size: 8pt !important;
   }
 
   .IMAGEGRID2{
@@ -474,5 +478,25 @@ header {
 
   .BODY{
     text-align: center !important;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .IMGBORDER{
+    width: 95% !important;
+  }
+
+  .DLLINKS{
+    margin-left: 0;
+  }
+
+  .LOGO{
+    width: 30%;
+    float: left;
+  }
+
+  .LINKS{
+    /* transform: scale(0.2); */
+    width: 60%;
   }
 }
