@@ -435,6 +435,7 @@ header {
     margin-left: -10%;
     padding: 0;
     max-width: 100%;
+    width: 100%;
     transform: scale(0.8);
   }
 
@@ -445,15 +446,15 @@ header {
   }
 
   .DLLINKS{
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: auto !important;
+    margin-right: auto !important;
     padding-left: 0;
     /* margin-left: -10% !important; */
     transform: scale(0.8);
   }
   td .DLLINK{
-    font-size: 9pt;
-    padding: 10px 12px;
+    font-size: 8pt;
+    padding: 8px 10px;
   }
 
   .IMGBORDER{
@@ -461,5 +462,17 @@ header {
     width: 95% !important;
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  h2{
+    text-align: center !important;
+  }
+
+  .STATS{
+    text-align: center !important;
+  }
+
+  .BODY{
+    text-align: center !important;
   }
 }
