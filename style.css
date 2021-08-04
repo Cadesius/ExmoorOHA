@@ -391,6 +391,26 @@ header {
   text-decoration: none;
 }
 
+@media screen and (max-width: 1600px) {
+  .IMGBORDER{
+    width: 95% !important;
+  }
+
+  .DLLINKS{
+    margin-left: 0;
+  }
+
+  .LOGO{
+    width: 25%;
+    float: left;
+  }
+
+  .LINKS{
+    /* transform: scale(0.2); */
+    width: 60%;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .content{
     margin-left: 5%;
@@ -478,25 +498,5 @@ header {
 
   .BODY{
     text-align: center !important;
-  }
-}
-
-@media screen and (max-width: 1600px) {
-  .IMGBORDER{
-    width: 95% !important;
-  }
-
-  .DLLINKS{
-    margin-left: 0;
-  }
-
-  .LOGO{
-    width: 30%;
-    float: left;
-  }
-
-  .LINKS{
-    /* transform: scale(0.2); */
-    width: 60%;
   }
 }
