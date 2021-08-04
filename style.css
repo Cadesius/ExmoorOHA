@@ -198,6 +198,25 @@ td .DLLINK {
   transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
 }
 
+td .CARDLINK {
+  border: 2px solid #262626;
+  display: block;
+  color: #000000;
+  font-family: "Gotham";
+  font-weight: bold;
+  font-size: 14pt;
+  text-align: center;
+  padding: 14px 18px;
+  text-decoration: none;
+  -o-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -ms-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -moz-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  -webkit-transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+  /* ...and now override with proper CSS property */
+  transition:color 0s ease-out, background .5s ease-in, color .5s ease-in;
+}
+
+
 td .LINK:hover {
   background-color: #262626;
   color: #ffffff;
@@ -207,6 +226,12 @@ td .LINK:hover {
 td .DLLINK:hover {
   background-color: #ffffff;
   color: #262626;
+  /* background-color: #000000; */
+}
+
+td .CARDLINK:hover {
+  background-color: #262626;
+  color: #ffffff;
   /* background-color: #000000; */
 }
 
@@ -391,6 +416,62 @@ header {
   text-decoration: none;
 }
 
+.IMGSCROLL{
+  margin-top: 5%;
+  margin-bottom: 3%;
+  width: 100%;
+  /* margin-left: -20%; */
+  /* background-image: url("paul-lincoln-exmoor-gs.jpg"); */
+  padding-top: 2%;
+  padding-bottom: 1%;
+  background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  /* min-height: 50px; */
+}
+
+.CARD{
+  /* display: grid; */
+  /* grid-gap: 10%; */
+  background-color: #ffffff;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  overflow: auto;
+  /* overflow: hidden; */
+  
+}
+
+.CARDBODY {
+  font-family: "Gotham";
+  text-align: left;
+  width: 90%;
+  padding-top: .5%;
+  padding-left: 0%;
+  color: #000000;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.CARDH2{
+  color: #262626;
+  font-size: 18pt;
+  width: 80%;
+  text-align: left;
+}
+
+.CARDIMG{
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+  margin: 2%;
+  width: 20%;
+  /* padding: 3%; */
+}
+
 @media screen and (max-width: 1600px) {
   .IMGBORDER{
     width: 95% !important;
@@ -414,6 +495,45 @@ header {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* grid-gap: 10%; */
     width: 100%;
+  }
+  .CARDIMG{
+    width: 35% !important;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .CARDIMG{
+    width: 45% !important;
+  }
+  .CARDBODY{
+    font-size: 10pt;
+  }
+  .CARDH2{
+    font-size: 14pt !important;
+  }
+  td .CARDLINK{
+    font-size: 12pt !important;
+    padding: 12px 16px;
+  }
+  /* .DLLINKS{
+    margin-right: auto !important;
+    margin-left: auto !important;
+  } */
+}
+
+@media screen and (max-width: 980px) {
+  .CARDBODY{
+    font-size: 8pt;
+  }
+  .CARDH2{
+    font-size: 12pt !important;
+  }
+  td .CARDLINK{
+    font-size: 10pt !important;
+    padding: 8px 12px;
+  }
+  .CARD{
+    width: 90%;
   }
 }
 
@@ -504,5 +624,31 @@ header {
 
   .BODY{
     text-align: center !important;
+  }
+  .CARDBODY{
+    text-align: center !important;
+  }
+  .CARDH2{
+    text-align: center !important;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  h1{
+    padding-top: 0;
+  }
+
+  .CARD{
+    margin-top: 5%;
+    margin-bottom: 5%;
+  }
+
+  .CARDIMG{
+    float: none !important;
+    width: 90% !important;
+    margin-left: 5% !important;
+    margin-top: 4% !important;
+    margin-right: auto !important;
+    padding: 0 !important;
   }
 }
