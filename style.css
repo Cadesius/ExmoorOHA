@@ -435,7 +435,7 @@ header {
   /* display: grid; */
   /* grid-gap: 10%; */
   background-color: #ffffff;
-  width: 85%;
+  width: 60%;
   margin-left: auto;
   margin-right: auto;
   margin-top: 2%;
@@ -533,14 +533,14 @@ header {
     padding: 8px 12px;
   }
   .CARD{
-    width: 90%;
+    width: 65%;
   }
 }
 
 @media screen and (max-width: 750px) {
   .content{
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 8%;
+    margin-right: 8%;
   }
   header{
     margin-left: 5%;
@@ -554,6 +554,7 @@ header {
   h1{
     text-align: center;
     padding-bottom: 3%;
+    margin-top: 2%;
   }
 
   li{
@@ -599,6 +600,7 @@ header {
     margin-left: auto !important;
     margin-right: auto !important;
     padding-left: 0;
+    margin-bottom: 4%;
     /* margin-left: -10% !important; */
     transform: scale(0.8);
   }
@@ -615,7 +617,12 @@ header {
   }
 
   h2{
+    /* margin-top: 6% !important; */
     text-align: center !important;
+  }
+
+  .SCROLLH2{
+    margin-top: 6% !important;
   }
 
   .STATS{
@@ -629,6 +636,7 @@ header {
     text-align: center !important;
   }
   .CARDH2{
+    margin-top: 2%;
     text-align: center !important;
     margin-right: auto;
     margin-left: auto;
@@ -639,6 +647,7 @@ header {
   }
 
   .CARD{
+    width: 80%;
     margin-top: 5%;
     margin-bottom: 5%;
   }
@@ -650,5 +659,9 @@ header {
     margin-top: 4% !important;
     margin-right: auto !important;
     padding: 0 !important;
+  }
+
+  .IMGSCROLL{
+    /* margin-top: 5% !important; */
   }
 }
