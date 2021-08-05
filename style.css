@@ -633,10 +633,13 @@ header {
     text-align: center !important;
   }
   .CARDBODY{
+    font-size: 10pt;
     text-align: center !important;
+    width: 85%;
   }
   .CARDH2{
     margin-top: 2%;
+    font-size: 14pt !important;
     text-align: center !important;
     margin-right: auto;
     margin-left: auto;
@@ -647,7 +650,7 @@ header {
   }
 
   .CARD{
-    width: 80%;
+    width: 85%;
     margin-top: 5%;
     margin-bottom: 5%;
   }
