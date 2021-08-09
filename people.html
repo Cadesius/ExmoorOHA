@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<script>
+    function Search() {
+      // Declare variables
+      var input, filter, ul, li, a, i;
+      input = document.getElementById("SEARCHBAR");
+      filter = input.value.toUpperCase();
+      ul = document.getElementById("GRID");
+      li = ul.getElementsByTagName("div");
+    
+      // Loop through all list items, and hide those who don't match the search query
+      for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+        } else {
+          li[i].style.display = "none";
+        }
+      }
+    }
+</script>
+
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="logo_fav_bg.png">
@@ -28,7 +50,7 @@
 
 <h2>THE PEOPLE OF EXMOOR</h2>
 
-<p class="BODY">Click each portrait below...</p>
+<p class="BODY">Click on the portraits below to learn more about the interviewees, or use the search-bar to search by name if you're looking for someone in particular...</p>
 
 <!-- <table class="IMAGES">
     <tr>
@@ -40,22 +62,126 @@
     </tr>
 </table> -->
 
-<div class="IMAGEGRID2">
-    <div class="IMGPRV">
-        <a href="PEOPLE/ted-lethaby.html">
-            <img class="IMGPRVM" src="OHA33 ted lethaby intro (THUMB).jpg" href>
-        </a>
-    </div>
-    <div class="IMGPRV">
-        <a href="PEOPLE/joan-smith.html">
-            <img class="IMGPRVM" src="OHA44 joan smith (THUMB).jpg" href>
-        </a>
-    </div>
-</div>
+
 
 </div>
 
-<footer>
+<div class="IMGSCROLL" style="background-image: url(john-mark-strange-exmoor-gs-cropped-dark.jpg); margin-bottom: 0; margin-top: 3%;">
+
+    <input type="search" id="SEARCHBAR" onkeyup="Search()" placeholder="Search..." title="Search by name" autofocus autocomplete="off">
+
+    <div class="IMAGEGRID2" id="GRID">
+        <div class="IMGPRV">
+            <a href="PEOPLE/ted-lethaby.html">
+                <img class="IMGPRVM" src="OHA33 ted lethaby p096 CROPPED.jpg" alt="Roger Federer">
+            </a>
+            <a href="PEOPLE/ted-lethaby.html" style="text-decoration: none; color: #000000;">
+                TED<br><b>LETHABY</b>
+            </a>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA06 DR. ERNEST MOLD.jpg" href>
+            </a>
+            <b>DR.</b> ERNEST<br><b>MOLD</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/ted-lethaby.html">
+                <img class="IMGPRVM" src="OHA33 ted lethaby p096 CROPPED.jpg" href>
+            </a>
+            TED<br><b>LETHABY</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+        <div class="IMGPRV">
+            <a href="PEOPLE/joan-smith.html">
+                <img class="IMGPRVM" src="OHA44 joan smith p119 CROPPED.jpg" href>
+            </a>
+            JOAN<br><b>SMITH</b>
+        </div>
+    </div>
+
+    <p class="BODY" style="color: #ffffff; padding: 0; text-align: right; width: 98%; font-size: 9pt;"><i>Photo of Cothelstone Hill by John-Mark Strange</i></p>
+    
+</div>
+
+<footer style="margin-top: 0;">
     <a href="https://swheritage.org.uk/">
         <img class="LOGO" src="logo_dark_grey_inverted.png" width=15% height=auto alt="South West Heritage Trust">
     </a>

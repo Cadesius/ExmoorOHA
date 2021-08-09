@@ -65,20 +65,31 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
   /* grid-auto-flow: column; */
-  margin-top: 5%;
-  width: 100%;
+  /* row-gap: 0%; */
+  width: 70% !important;
+  margin-top: 2%;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: -5%;
+  /* margin-bottom: 0%; */
   justify-items: center;
   align-items: center;
   justify-content: end;
-  grid-gap: 2%;
+  /* grid-gap: 2%; */
+  margin-bottom: 3%;
+  column-gap: 1.5%;
 }
 
 .IMGPRV{
-  width: 80%;
-  height: auto;
+  /* margin-top: auto; */
+  /* margin-bottom: auto; */
+  font-size: 15pt;
+  text-align: center;
+  padding-bottom: 5%;
+  font-family: Gotham;
+  /* white-space: nowrap; */
+  width: 100%;
+  height: 90%;
+  background-color: #ffffff;
   -webkit-transition: all .5s ease-in, all .5s ease-out;
   -moz-transition: all .5s ease-in, all .5s ease-out;
   -o-transition: all .5s ease-in, all .5s ease-out;
@@ -90,16 +101,19 @@ body {
   /* filter: blur(5px); */
   scroll-snap-destination: center;
   /* ...and now override with proper CSS property */
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: 10%;
+  /* padding-bottom: 10%; */
   /* background-color: #262626; */
   overflow: hidden;
+  /* margin-left: 50%; */
 }
 
 .IMGPRVM{
   /* transform: scale(1.02); */
-  width: 100%;
+  width: 90%;
   height: auto;
+  margin: 5%;
+  /* margin-bottom: 0; */
   /* position: absolute; */
   /* object-fit: contain; */
   -webkit-transition: all .5s ease-in, all .5s ease-out;
@@ -331,7 +345,7 @@ footer {
   margin-top: 10%;
 }
 
-.BODY {
+.BODY{
     font-family: "Gotham";
     text-align: center;
     width: 100%;
@@ -472,6 +486,44 @@ header {
   /* padding: 3%; */
 }
 
+#SEARCHBAR{
+  margin-left: 15%;
+  margin-right: auto;
+  /* text-align: center; */
+  width: 70%;
+  font-size: 20pt;
+  font-family: Gotham;
+  background-color: #26262677;
+  color: #ffffffff;
+  outline: none;
+  padding: .5%;
+  /* padding-left: 0; */
+  /* padding-bottom: .1%; */
+  font-weight: bold;
+  border: 0;
+  text-transform: uppercase;
+  border: 2px solid #ffffff;
+  -webkit-transition: all .5s ease-in, all .5s ease-out;
+  -moz-transition: all .5s ease-in, all .5s ease-out;
+  -o-transition: all .5s ease-in, all .5s ease-out;
+  -ms-transition: all .5s ease-in, all .5s ease-out;
+  transition: all .5s ease-in, all .5s ease-out;
+}
+
+#SEARCHBAR:hover{
+  background-color: #ffffff;
+  color: #000000;
+}
+
+::placeholder{
+  opacity: 1 !important;
+}
+
+input::-webkit-input-placeholder {
+  color: #ffffff;
+  opacity: 1;
+}
+
 @media screen and (max-width: 1600px) {
   .IMGBORDER{
     width: 95% !important;
@@ -495,6 +547,9 @@ header {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /* grid-gap: 10%; */
     width: 100%;
+  }
+  .IMGPRV{
+    margin-bottom: 5%;
   }
   .CARDIMG{
     width: 35% !important;
@@ -594,6 +649,10 @@ header {
     grid-template-columns: 1fr;
     /* grid-gap: 10%; */
     width: 90%;
+    margin-top: 15%;
+  }
+  .IMGPRV{
+    margin-bottom: 0;
   }
 
   .DLLINKS{
