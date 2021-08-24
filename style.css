@@ -95,7 +95,7 @@ body {
   -o-transition: all .5s ease-in, all .5s ease-out;
   -ms-transition: all .5s ease-in, all .5s ease-out;
   transition: all .5s ease-in, all .5s ease-out;
-  -webkit-filter: brightness(100%);
+  /* -webkit-filter: brightness(100%); */
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
   /* -webkit-filter: blur(1.5px); */
   /* filter: blur(5px); */
@@ -468,6 +468,7 @@ header {
   color: #000000;
   margin-left: auto;
   margin-right: auto;
+  font-size: 12pt;
 }
 
 .CARDH2{
@@ -493,7 +494,7 @@ header {
   width: 70%;
   font-size: 20pt;
   font-family: Gotham;
-  background-color: #26262677;
+  background-color: #26262600;
   color: #ffffffff;
   outline: none;
   padding: .5%;
@@ -502,7 +503,7 @@ header {
   font-weight: bold;
   border: 0;
   text-transform: uppercase;
-  border: 2px solid #ffffff;
+  border: 3px solid #ffffff;
   -webkit-transition: all .5s ease-in, all .5s ease-out;
   -moz-transition: all .5s ease-in, all .5s ease-out;
   -o-transition: all .5s ease-in, all .5s ease-out;
@@ -510,13 +511,15 @@ header {
   transition: all .5s ease-in, all .5s ease-out;
 }
 
-#SEARCHBAR:hover{
+#SEARCHBAR:focus{
   background-color: #ffffff;
   color: #000000;
+  caret-color: #000000;
 }
 
 ::placeholder{
   opacity: 1 !important;
+  color: #ffffff !important;
 }
 
 input::-webkit-input-placeholder {
@@ -524,9 +527,14 @@ input::-webkit-input-placeholder {
   opacity: 1;
 }
 
+.SCROLLH2{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
 @media screen and (max-width: 1600px) {
   .IMGBORDER{
-    width: 95% !important;
+    width: 96% !important;
   }
 
   .DLLINKS{
@@ -554,17 +562,21 @@ input::-webkit-input-placeholder {
   .CARDIMG{
     width: 35% !important;
   }
+
+  .IMGPRV{
+    padding-bottom: 7%;
+  }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1200px) {
   .CARDIMG{
     width: 45% !important;
   }
   .CARDBODY{
-    font-size: 10pt;
+    font-size: 11pt;
   }
   .CARDH2{
-    font-size: 14pt !important;
+    font-size: 16pt !important;
   }
   td .CARDLINK{
     font-size: 12pt !important;
@@ -574,6 +586,27 @@ input::-webkit-input-placeholder {
     margin-right: auto !important;
     margin-left: auto !important;
   } */
+  .HHLINK{
+    font-size: 24pt;
+  }
+  li a{
+    font-size: 16pt;
+  }
+  h2{
+    font-size: 20pt;
+  }
+  .SCROLLH2{
+    font-size: 20pt;
+  }
+
+  .IMGPRV{
+    padding-bottom: 8%;
+    font-size: 12pt;
+  }
+
+  #SEARCHBAR{
+    font-size: 18pt;
+  }
 }
 
 @media screen and (max-width: 980px) {
@@ -590,12 +623,22 @@ input::-webkit-input-placeholder {
   .CARD{
     width: 65%;
   }
+
+  .IMGPRV{
+    padding-bottom: 8%;
+    font-size: 9pt;
+  }
+
+  #SEARCHBAR{
+    font-size: 16pt;
+  }
 }
 
 @media screen and (max-width: 750px) {
   .content{
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-bottom: 3%;
   }
   header{
     margin-left: 5%;
@@ -662,15 +705,17 @@ input::-webkit-input-placeholder {
     margin-bottom: 4%;
     /* margin-left: -10% !important; */
     transform: scale(0.8);
+    border-width: 0.5px;
   }
   td .DLLINK{
     font-size: 8pt;
     padding: 8px 10px;
+    border-width: 0.5px;
   }
 
   .IMGBORDER{
     float: none;
-    width: 95% !important;
+    width: 96% !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
@@ -678,6 +723,10 @@ input::-webkit-input-placeholder {
   h2{
     /* margin-top: 6% !important; */
     text-align: center !important;
+    font-size: 22pt;
+  }
+  .HHLINK{
+    font-size: 26pt;
   }
 
   .SCROLLH2{
@@ -723,7 +772,23 @@ input::-webkit-input-placeholder {
     padding: 0 !important;
   }
 
-  .IMGSCROLL{
-    /* margin-top: 5% !important; */
+  .IMGPRV{
+    padding-bottom: 5%;
+    margin-bottom: 10%;
+    font-size: 16pt;
+  }
+  .IMAGEGRID2{
+    width: 85% !important;
+    margin-top: 8%;
+  }
+  #SEARCHBAR{
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    width: 85%;
+    font-size: 16pt;
+    padding: 3%;
+    margin-top: 3%;
+    margin-bottom: 0;
+    background-color: #26262600;
   }
 }
