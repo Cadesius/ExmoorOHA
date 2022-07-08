@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <head>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="logo_fav_bg.png">
@@ -44,7 +45,14 @@
         <p class="CARDBODY">Ted Lethaby was Exmoor's AA operative for a number of years, patrolling between Lynmouth and Porlock in a motorbike and sidecar. Now retired, he looks after Countisbury Church and Foreland Lighthouse, where his wife grew up.</p>
         <table style="margin-left: 0%; margin-right: auto; border: 0px;" class="DLLINKS">
             <tr>
-                <td><a style="font-size: 12pt; padding: auto;" class="CARDLINK" href="PEOPLE/ted-lethaby.html">READ MORE</a></td>
+                <td><a id="modal_button_ted_lethaby" style="font-size: 12pt; padding: auto;" class="CARDLINK" href="javascript:;">READ MORE</a></td>
+                <div id="modal_ted_lethaby" class="modal">
+                    <div class="modal-content">
+                        <span class="modal_home"><img src="home_icon.png" style="height:18px;padding-bottom:5px;"><img></span>
+                        <span class="modal_close">&times;</span>
+                        <iframe id="modal_iframe_ted_lethaby" src="PEOPLE/ted-lethaby-iframe.html" style="border:none; width:100%; height: 100%;"></iframe>
+                    </div>
+                </div>
             </tr>
         </table>
     </div>
@@ -55,7 +63,14 @@
         <p class="CARDBODY" style="text-align: right;">Inspired by both her parents and her teachers at Countisbury school, Joan Smith pursued a career in teaching. She has lived in Porlock since 1930, and recalls climbing through heather as tall as she was just to get to school.</p>
         <table style="margin-left: auto; margin-right: 0%; border: 0px;" class="DLLINKS">
             <tr>
-                <td><a style="font-size: 12pt; padding: auto;" class="CARDLINK" href="PEOPLE/joan-smith.html">READ MORE</a></td>
+                <td><a id="modal_button_JS" style="font-size: 12pt; padding: auto;" class="CARDLINK" href="javascript:;">READ MORE</a></td>
+                <div id="modal_JS" class="modal">
+                    <div class="modal-content">
+                        <span class="modal_home"><img src="home_icon.png" style="height:18px;padding-bottom:5px;"><img></span>
+                        <span class="modal_close">&times;</span>
+                        <iframe id="modal_iframe_JS" src="PEOPLE/joan-smith-iframe.html" style="border:none; width:100%; height: 100%;"></iframe>
+                    </div>
+                </div>
             </tr>
         </table>
     </div>
@@ -66,7 +81,14 @@
         <p class="CARDBODY" style="text-align: left;">Ken Oxenham is a highly experienced sailor from a family of seafarers in Lynmouth, and as a result he has lived and breathed the sea for most of his life. He also helped with relief work after the Lynmouth Flood, and was in charge of supplies and stores.</p>
         <table style="margin-left: 0%; margin-right: auto; border: 0px;" class="DLLINKS">
             <tr>
-                <td><a style="font-size: 12pt; padding: auto;" class="CARDLINK" href="PEOPLE/joan-smith.html">READ MORE</a></td>
+                <td><a id="modal_button_KO" style="font-size: 12pt; padding: auto;" class="CARDLINK" href="javascript:;">READ MORE</a></td>
+                <div id="modal_KO" class="modal">
+                    <div class="modal-content">
+                        <span class="modal_home"><img src="home_icon.png" style="height:18px;padding-bottom:5px;"><img></span>
+                        <span class="modal_close">&times;</span>
+                        <iframe id="modal_iframe_KO" src="PEOPLE/ken-oxenham-iframe.html" style="border:none; width:100%; height: 100%;"></iframe>
+                    </div>
+                </div>
             </tr>
         </table>
     </div>
@@ -77,7 +99,14 @@
         <p class="CARDBODY" style="text-align: right;"> Famous for living in a remote caravan on Exmoor for over twenty years, Hope Bourne would regularly take herself off on twenty mile long mapless walks across Exmoor, and has in later life penned several self illustrated books.</p>
         <table style="margin-left: auto; margin-right: 0%; border: 0px;" class="DLLINKS">
             <tr>
-                <td><a style="font-size: 12pt; padding: auto;" class="CARDLINK" href="PEOPLE/joan-smith.html">READ MORE</a></td>
+                <td><a id="modal_button_hope_bourne" style="font-size: 12pt; padding: auto;" class="CARDLINK" href="javascript:;">READ MORE</a></td>
+                <div id="modal_hope_bourne" class="modal">
+                    <div class="modal-content">
+                        <span class="modal_home"><img src="home_icon.png" style="height:18px;padding-bottom:5px;"><img></span>
+                        <span class="modal_close">&times;</span>
+                        <iframe id="modal_iframe_hope_bourne" src="PEOPLE/hope-bourne-iframe.html" style="border:none; width:100%; height: 100%;"></iframe>
+                    </div>
+                </div>
             </tr>
         </table>
     </div>
@@ -131,3 +160,5 @@
 </body>
 
 </html>
+
+<script src="modal-script.js"></script>
