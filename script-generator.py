@@ -1,9 +1,15 @@
-import os
-import sys
+# START
 
-# def addToClipBoard(text):
-#     command = 'echo | set /p nul=' + text.strip() + '| clip'
-#     os.system(command)
+# Note: Selenium must be installed onto the system prior to running this code. Enter the following command into a command prompt window: `python -m pip install selenium`
+
+# Import required packages
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+import os
+
+# Define contents of the HTML page
 
 htmlpage = """<!DOCTYPE html>
 <html lang="en">
@@ -11,7 +17,7 @@ htmlpage = """<!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="../logo_fav_bg.png">
-    <title>{fullname} - The Exmoor Oral Archives</title>
+    <title>{fullname} - The Exmoor Oral History Archives</title>
 </head>
 <body style="background-color: rgba(1,1,1,0);margin-bottom: 20%;">
 
@@ -25,9 +31,9 @@ htmlpage = """<!DOCTYPE html>
 
 <table class="DLLINKS">
     <tr>
-        <td><a class="DLLINK" href="{cataloguelink}">CATALOGUE</a></td>
+        <td><a class="DLLINK" style="margin-left: 0;" href="{cataloguelink}">CATALOGUE</a></td>
         <td><a class="DLLINK" href="{recordinglink}">INTERVIEW</a></td>
-        <td><a class="DLLINK" href="{transcriptlink}">TRANSCRIPT</a></td>
+        <td><a class="DLLINK" style="margin-right: 0;" href="{transcriptlink}">TRANSCRIPT</a></td>
     </tr>
 </table>
 
@@ -36,84 +42,150 @@ htmlpage = """<!DOCTYPE html>
 <p class="STATS"><b>RECORDING MADE: </b>{date}</p>
 <p class="STATS"><b>RECORDING LENGTH: </b>{length}</p>
 
-<p style="text-align: left;" class="BODY">{summarypara1}</p>
-<p style="text-align: left;" class="BODY">{summarypara2}</p>
-<p style="text-align: left;" class="BODY">{summarypara3}</p>
-<p style="text-align: left;" class="BODY"><i>{summarypostscript}</i></p>
+<p style="text-align: left;" class="BODY">{summary_para1}</p>
+<p style="text-align: left;" class="BODY">{summary_para2}</p>
+<p style="text-align: left;" class="BODY">{summary_para3}</p>
+<p style="text-align: left;" class="BODY">{summary_para4}</p>
+<p style="text-align: left;" class="BODY"><i>{summary_postscript}</i></p>
+<p style="text-align: left; font-size: 10pt;" class="BODY">Photograph by Mark J. Rattenbury</p>
 
+<table class="DLLINKS" style="margin-left:auto; margin-right:auto; margin-top: 5%;">
+    <tr>
+        <td><a class="DLLINK" href="Javascript:window.print();" style="font-size: 12pt;">PRINT THIS PAGE</a></td>
+    </tr>
+</table>
 
 </div>
-
 
 </body>
 </html>"""
 
-jscript = """modal_creator ("{name}");"""
+# Define the line that is to be piped into the modal-script.js Javascript file
 
-htmlscript = """<div class="IMGPRV" id="modal_button_{name}">
-            <a href="javascript:;open_summary">
-                <img class="IMGPRVM" src="PEOPLE/PHOTOS/THUMBS/{thumbs}" alt="{fullname}, {place}">
-            </a>
-            <a href="javascript:;open_summary" style="text-decoration: none; color: #000000;">
-                {firstname}<br><b>{lastname}</b>
-            </a>
-        </div>"""
+jscript = '''"modal_creator (\\"{lastname}\\", \\"{firstname}\\", \\"{fullname}\\", \\"{thumbs}\\", \\"{lived}\\")",'''
 
-htmlmodalscript = """<div id="modal_{name}" class="modal">
-    <div class="modal-content">
-        <span class="modal_home"><img class="modal_home_icon" src="home_icon_filled.png"><img>HOME</span>
-        <span class="modal_close">&times;</span>
-        <iframe id="modal_iframe_{name}" src="PEOPLE/{iframe}" style="border:none; width:100%; height: 100%;"></iframe>
-    </div>
-</div>"""
+# Define variables to be substituted into the HTML page and Javascript code
 
-name = input ("Enter interviewee's name: ")
-fullname = input ("Enter interviewee's full name: ")
-fullnamecaps = fullname.upper ()
-image = input ("\nEnter image title: ")
-thumbs = input ("Enter thumbnail image title: ")
-iframe = input ("\nEnter interviewee's html page name: ")
-firstname = input ("\nEnter first name: ")
+firstname = input ("Enter first name: ")
 lastname = input ("Enter last name: ")
-born = input ("\nEnter born: ")
-lived = input ("Enter lived: ")
-place = lived
-date = input ("Enter recording date: ")
-length = input ("Enter recording length: ")
-summarypara1 = input ("\nEnter first paragraph of summary: ")
-summarypara2 = input ("\nEnter second paragraph of summary: ")
-summarypara3 = input ("\nEnter third paragraph of summary: ")
-summarypostscript = input ("\nEnter summary postscript: ")
+fullname = firstname.title () + " " + lastname.title ()
+name = fullname.lower ()
+name = name.replace (" ", "_")
+fullnamecaps = fullname.upper ()
+firstname = firstname.upper()
+lastname = lastname.upper()
+
+image = name + ".jpg"
+thumbs = input ("\nEnter thumbnail image title: ")
+
+iframe = name + ".html"
+
 cataloguelink = input ("\nEnter link to catalogue page: ")
-recordinglink = input ("Enter link to catalogue page for audio recording: ")
-transcriptlink = input ("Enter link to transcript document: ")
+recordinglink = cataloguelink + "/1"
+transcriptlink = cataloguelink + "/2"
+
 width = input ("\nEnter image width (as a percentage of total page width): ")
 
-print ("\nCopy this text into the modal-script.js file:\n")
+# Launch Selenium webdriver with Firefox as the browser
 
-print (jscript.format(name=name))
+driver=webdriver.Firefox ()
 
-print ("\nCopy this text into the grid section of the people.html file:\n")
+# Navigate webdriver to the catalogue page
 
-print (htmlscript.format(name=name, fullname=fullname, thumbs=thumbs, firstname=firstname, lastname=lastname, place=place))
+driver.get (cataloguelink)
 
-print ("\nCopy this text into the modals section of the people.html file:\n")
+time.sleep (3)
 
-print (htmlmodalscript.format(name=name, iframe=iframe))
+# Find all record values
+
+fieldData = driver.find_elements (By.CLASS_NAME, "recordFieldValues")
+
+# Define variables based on record values
+
+born = fieldData [2].text
+lived = fieldData [3].text
+place = lived
+date = fieldData [4].text
+length = fieldData [5].text
+summary = fieldData [6].text
+
+# Determine number of paragraphs in summary
+
+para_counter = summary.count ("\n")
+
+# Define blank paragraph variables
+
+summary_para1 = ""
+summary_para2 = ""
+summary_para3 = ""
+summary_para4 = ""
+summary_postscript = ""
+
+# Split summary into individual paragraphs based on linebreaks, which are then formatted into an array
+
+para_list = summary.split ("\n")
+
+# Check for a postscript, which will need to be formatted differently in the HTML page. If a postscript is found, it will be added to the HTML page, and then deleted from the summary array, and the count for paragraphs will be reduced by one.
+
+if "passed away in" in para_list [para_counter]:
+    summary_postscript = para_list [para_counter]
+    del para_list [para_counter]
+    para_counter = para_counter - 1
+
+# Define paragraphs based on the summary array, using if loops to allow flexibility in number of paragraphs
+
+for i in range (para_counter + 1):
+    if i == 0:
+        summary_para1 = para_list [i]
+    if i == 1:
+        summary_para2 = para_list [i]
+    if i == 2:
+        summary_para3 = para_list [i]
+    if i == 3:
+        summary_para4 = para_list [i]
+
+# Define the HTML page with the correct variables being substituted in to complete the page
+
+htmlpage_formatted = htmlpage.format (fullname=fullname, fullnamecaps = fullnamecaps, image = image, born = born, lived = lived, date = date, length = length, summary_para1 = summary_para1, summary_para2 = summary_para2, summary_para3 = summary_para3, summary_para4 = summary_para4, summary_postscript = summary_postscript, cataloguelink = cataloguelink, recordinglink = recordinglink, transcriptlink = transcriptlink, width = width)
+
+# Remove blank paragraph and postscript elements from the HTML page, to avoid formatting issues once generated
+
+htmlpage_formatted = htmlpage_formatted.replace ("""<p style="text-align: left;" class="BODY"><i></i></p>""", "")
+htmlpage_formatted = htmlpage_formatted.replace ("""<p style="text-align: left;" class="BODY"></p>""", "")
+
+# Define the Javascript code with the correct variables being substituted in to complete the script
+
+jscript_formatted = jscript.format (fullname = fullname, thumbs = thumbs, lived = lived, firstname = firstname, lastname = lastname)
+
+# Close the Selenium webdriver
+
+driver.close ()
 
 print ("")
 
-# print (htmlpage.format(fullname=fullname, fullnamecaps=fullnamecaps, image=image, born=born, lived=lived, date=date, length=length, summarypara1=summarypara1, summarypara2=summarypara2, summarypara3=summarypara3, summarypostscript=summarypostscript, cataloguelink=cataloguelink, recordinglink=recordinglink, transcriptlink=transcriptlink, width=width))
+# Define save directory for the HTML page
 
-# print ("")
+save_directory = 'PEOPLE/' + name + '.html'
 
-# addToClipBoard(str(jscript.format(name=name)))
+# Write the formatted HTML page to a newly created file in the specified save directory (this will overwrite any existing HTML file with the same name)
 
-savedirectory = 'PEOPLE/'+name+'.html'
+with open (save_directory, 'w') as file:
+    file.write (htmlpage_formatted)
 
-with open(savedirectory, 'w') as file:
-    file.write(htmlpage.format(fullname=fullname, fullnamecaps=fullnamecaps, image=image, born=born, lived=lived, date=date, length=length, summarypara1=summarypara1, summarypara2=summarypara2, summarypara3=summarypara3, summarypostscript=summarypostscript, cataloguelink=cataloguelink, recordinglink=recordinglink, transcriptlink=transcriptlink, width=width))
+# Append the formatted Javascript code to the modal-script.js file (this will not overwrite existing code for individuals with the same name, these must be removed)
 
-# addToClipBoard(str(jscript.format(name=name)))
+# with open ("modal-script.js", "a") as file:
+#     file.write ("\n" + jscript_formatted)
 
-os.system('pause')
+# Pipe the formatted Javascript code into the modal-script.js file as the first item of the list of interviewees (this will not overwrite existing code for individuals with the same name, these must be removed)
+
+with open ("modal-script.js", "r") as input:
+    with open ("modal-script-temp.js", "w") as output:
+        for line in input:
+            if """const modal_creators = ["""  in line.strip ("\n"):
+                line = line.replace (line, line + "\t" + jscript_formatted + "\n")
+            output.write (line)
+
+os.replace('modal-script-temp.js', 'modal-script.js')
+
+# END
